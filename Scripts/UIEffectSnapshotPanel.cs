@@ -104,7 +104,7 @@ namespace Coffee.UIExtensions
             var speed = 1 / Mathf.Max(0.001f, duration);
             while (canvasGroup.alpha < 1)
             {
-                canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha + Time.deltaTime * speed);
+                canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha + Time.unscaledDeltaTime * speed);
                 yield return null;
             }
 
@@ -122,7 +122,7 @@ namespace Coffee.UIExtensions
 
             while (0 < canvasGroup.alpha)
             {
-                canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha - Time.deltaTime * speed);
+                canvasGroup.alpha = Mathf.Clamp01(canvasGroup.alpha - Time.unscaledDeltaTime * speed);
                 yield return null;
             }
 
